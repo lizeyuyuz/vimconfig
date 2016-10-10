@@ -175,6 +175,7 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
 """""""""""""" YouCompleteMe {{{
 let g:yc_global_ycm_extra_conf = '~/ycm_temp/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'qf' : 1,
@@ -188,7 +189,4 @@ let g:ycm_filetype_blacklist = {
       \ 'mail' : 1
       \}
 """ }}}
-
-
-
 
