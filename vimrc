@@ -1,11 +1,5 @@
 " General configuration {{{
-let mapleader = "`"
 set gcr=a:blinkon0              "Disable cursor blink
-" Use a blinking upright bar cursor in Insert mode, a blinking block in normal
-if &term == 'xterm-256color' || &term == 'screen-256color'
-    let &t_SI = "\<Esc>[5 q"
-    let &t_EI = "\<Esc>[1 q"
-endif
 " detect .tex files...somehow disabled
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 " }}}
@@ -38,6 +32,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " vimtex
 Plugin 'lervag/vimtex'
 
+" Syntastic
+Plugin 'scrooloose/syntastic'
+
 "" UltiSnips
 " Track the engine.
 Plugin 'SirVer/ultisnips'
@@ -50,6 +47,12 @@ Plugin 'vim-scripts/Conque-GDB'
 
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
+
+" Supertab
+Plugin 'ervandew/supertab'
+
+" Nvim-R
+Plugin 'jalvesaq/Nvim-R'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -71,7 +74,7 @@ filetype plugin indent on    " required
 
 """""""""""""""""""""""" Visual "{{{
 " Set the guifont
-set guifont=Menlo:h11
+set guifont=Menlo:h14
 
 " Solarized theme
 syntax enable 
@@ -80,6 +83,16 @@ colorscheme solarized
 set background=dark
 let g:solarized_termtrans = 1 "vim_not transparent on terminal
 
+if has('nvim')
+  set termguicolors
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+  set background=dark
+  let g:solarized_italic=0
+  au VimEnter * colorscheme solarized
+  colorscheme solarized
+endif
 
 set splitbelow
 set splitright
@@ -107,8 +120,8 @@ let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_theme="solarized"
 "Powerline font"
-set term=xterm-256color
-"set termencoding=utf-8
+"set term=xterm-256color
+set termencoding=utf-8
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h11
 """"""""""""""""""""""""}}}
 
@@ -117,7 +130,7 @@ set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h11
 " enable syntax
 syntax on 
 " Automatically detect file types."
-" filetype plugin indent on 
+filetype indent on 
 " enable syntax processing
 syntax enable 
 " number of visual spaces per TAB
@@ -153,7 +166,7 @@ nnoremap <leader>V: PandocPreview<cr>
 """""""""""""" UltiSnips {{{
 " https://github.com/idbrii/vim-david-snippets/blob/master/UltiSnips/cpp.snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<leader>"
+let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
@@ -188,5 +201,12 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog' : 1,
       \ 'mail' : 1
       \}
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+
 """ }}}
+
+""""""""""""" Supertab {{{
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+"""}}}
 
