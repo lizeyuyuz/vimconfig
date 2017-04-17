@@ -1,4 +1,5 @@
 " General configuration {{{
+
 set gcr=a:blinkon0              "Disable cursor blink
 " detect .tex files...somehow disabled
 autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -119,10 +120,12 @@ set ruler
 let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_theme="solarized"
-"Powerline font"
-"set term=xterm-256color
-set termencoding=utf-8
-set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h11
+"Powerline font symbol problems"
+"set term=xterm-256color    "not work
+"set termencoding=utf-8     "not work
+""put this in .gvimrc   "(this works)
+"set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h12 
+"set encoding=utf-8
 """"""""""""""""""""""""}}}
 
 
@@ -199,7 +202,8 @@ let g:ycm_filetype_blacklist = {
       \ 'vimwiki' : 1,
       \ 'pandoc' : 1,
       \ 'infolog' : 1,
-      \ 'mail' : 1
+      \ 'mail' : 1,
+      \ 'plaintex' : 1
       \}
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
@@ -209,4 +213,6 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 """"""""""""" Supertab {{{
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
 """}}}
+
+let g:tex_flavor = 'latex'
 
