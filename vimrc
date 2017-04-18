@@ -13,7 +13,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -39,6 +39,11 @@ Plugin 'scrooloose/syntastic'
 "" UltiSnips
 " Track the engine.
 Plugin 'SirVer/ultisnips'
+
+""Snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -75,7 +80,7 @@ filetype plugin indent on    " required
 
 """""""""""""""""""""""" Visual "{{{
 " Set the guifont
-set guifont=Menlo:h14
+set guifont=Menlo:h11
 
 " Solarized theme
 syntax enable 
