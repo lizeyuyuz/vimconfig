@@ -1,11 +1,3 @@
-" General configuration {{{
-
-set gcr=a:blinkon0              "Disable cursor blink
-" detect .tex files...somehow disabled
-autocmd BufRead,BufNewFile *.tex set filetype=tex
-" }}}
-
-
 """""""""""""""""""""""" VUNDLE SETUP {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -76,8 +68,6 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""}}}
 
 
-
-
 """""""""""""""""""""""" Visual "{{{
 " Set the guifont
 set guifont=Menlo:h11
@@ -88,17 +78,6 @@ let g:solarized_termcolors=256
 colorscheme solarized  
 set background=dark
 let g:solarized_termtrans = 1 "vim_not transparent on terminal
-
-if has('nvim')
-  set termguicolors
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-  set background=dark
-  let g:solarized_italic=0
-  au VimEnter * colorscheme solarized
-  colorscheme solarized
-endif
 
 set splitbelow
 set splitright
@@ -129,7 +108,7 @@ let g:airline_theme="solarized"
 "set term=xterm-256color    "not work
 "set termencoding=utf-8     "not work
 ""put this in .gvimrc   "(this works)
-"set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h12 
+set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h12 
 "set encoding=utf-8
 """"""""""""""""""""""""}}}
 
@@ -220,4 +199,3 @@ let g:SuperTabDefaultCompletionType = '<C-Tab>'
 """}}}
 
 let g:tex_flavor = 'latex'
-

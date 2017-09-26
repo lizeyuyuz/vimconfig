@@ -3,6 +3,8 @@ set nowrap
 set textwidth=80
 "highlight Excess ctermbg=Darkred guibg=#FFD9D9
 "match Excess /\%81v.*/
+setlocal colorcolumn=81
+highlight ColorColumn guibg=DodgerBlue4
 
 " Use <leader>l to toggle display of whitespace
 nmap <leader>l :set list!<CR>
