@@ -5,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 
@@ -51,6 +51,9 @@ Plugin 'ervandew/supertab'
 
 " Nvim-R
 Plugin 'jalvesaq/Nvim-R'
+
+" JamshedVesuna/vim-markdown-preview 
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -199,3 +202,10 @@ let g:SuperTabDefaultCompletionType = '<C-Tab>'
 """}}}
 
 let g:tex_flavor = 'latex'
+
+" copy and paste vim and iterm
+set clipboard=unnamed
+
+# 
+let vim_markdown_preview_browser='Google Chrome'
+
