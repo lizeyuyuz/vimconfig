@@ -41,7 +41,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
 " Conque-GDB, using gdb in vim buffer
-Plugin 'vim-scripts/Conque-GDB'
+"'Plugin 'vim-scripts/Conque-GDB'
 
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
@@ -206,6 +206,5 @@ let g:tex_flavor = 'latex'
 " copy and paste vim and iterm
 set clipboard=unnamed
 
-# 
 let vim_markdown_preview_browser='Google Chrome'
 
